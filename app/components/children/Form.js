@@ -1,3 +1,5 @@
+// JB Notes: User entry for name, email, location/destination
+
 // Include React
 var React = require("react");
 
