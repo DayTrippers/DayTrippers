@@ -1,3 +1,5 @@
+// JB Notes: maybe not needed for MVP
+// JB Notes: if we are able to save user profiles and associate saved itineraries
 // Include React
 var React = require("react");
 

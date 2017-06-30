@@ -1,3 +1,5 @@
+// JB Notes: This page is where the data from the api's get displayed
+
 // Include React
 var React = require("react");
 
