@@ -1,7 +1,7 @@
 {
-  "name": "react-example",
+  "name": "DayTrippers",
   "version": "1.0.0",
-  "description": "",
+  "description": "Suggested interary for a day of fun and food where ever you are.  A MERN stack web app",
   "main": "public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "start": "node server",
     "build": "webpack"
   },
-  "author": "Ahmed Haque",
+  "author": "Juan Reyes, Pablo Ponce, Rachel Garcia, Julie Burk",
   "license": "ISC",
   "dependencies": {
     "@google/maps": "^0.4.2",
