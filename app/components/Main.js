@@ -68,6 +68,7 @@ var Main = React.createClass({
           <div className="jumbotron">
 
 
+
              
                   <div className="header-content">
                       <div className="inner">
@@ -79,29 +80,27 @@ var Main = React.createClass({
     
 
             <h2 className="text-center">TEST AGAIN</h2>
+
             <p className="text-center">
-              <em>Enter a landmark to search for its exact address (ex: "Eiffel Tower").</em>
+              <em>Lets add this API.</em>
             </p>
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-12">
 
             <Form setTerm={this.setTerm} />
 
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-12">
 
             <Results address={this.state.results} />
-
           </div>
 
         </div>
 
-        <div className="row">
-
-          <History history={this.state.history} />
-
+        // <div className="row">
+        //   <History history={this.state.history}/>
         </div>
 
       </div>
