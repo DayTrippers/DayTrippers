@@ -66,7 +66,19 @@ var Main = React.createClass({
       <div className="container">
         <div className="row">
           <div className="jumbotron">
-            <h2 className="text-center">Address Finder!</h2>
+
+
+             
+                  <div className="header-content">
+                      <div className="inner">
+                          <img src="./public/assets/logoWhite2.png" id="logoWhite"/>
+                          <h4>Day by Day your Kinda Way</h4>  
+                      </div>
+                  </div>
+                      <img src="./publc/assets/background.jpg" id="video-background"/>
+    
+
+            <h2 className="text-center">TEST AGAIN</h2>
             <p className="text-center">
               <em>Enter a landmark to search for its exact address (ex: "Eiffel Tower").</em>
             </p>
