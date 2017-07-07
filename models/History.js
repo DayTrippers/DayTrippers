@@ -35,5 +35,5 @@ var DayTrippersSchema = new Schema({
 });
 
 //DayTrippers is the property name for this schema//
-var DayTrippers = mongoose.model("DayTrippersDB", DayTrippersSchema);
-module.exports = DayTrippers;
+var DayTrippersDB = mongoose.model("DayTrippersDB", DayTrippersSchema);
+module.exports = DayTrippersDB;
