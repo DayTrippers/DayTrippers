@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var GooglePlaces = require("google-places");
 
 // Require History Schema
 var DayTrippersDB = require("./models/History");
@@ -10,7 +11,7 @@ var DayTrippersDB = require("./models/History");
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Run Morgan for Logging
 app.use(logger("dev"));
@@ -22,6 +23,23 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("./public"));
 
 // -------------------------------------------------
+
+/*
+// to resolve the following error
+// Fetch API cannot load 
+// https://maps.googleapis.com/maps/api/place/textsearch/json?language=en&loca…od&radius=5000&type=restaurant&key=AIzaSyBgo7aeUai60b0KOejPs8gaedWzo7TRN4M. 
+// No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:8080' is therefore not allowed access. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+
+// try adding next to routes
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+*/
+
+// -------------------------------------------------
+
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 

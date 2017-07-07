@@ -9,6 +9,13 @@ var History = require("./children/History");
 // Helper for making AJAX requests to our API
 var helpers = require("./utils/helpers");
 
+var googleHelperPlaces = require("./utils/APItextSearch4"); // call it on line 41 replace helpers
+// googleHelper.runQuery();
+
+var googleMapsClient = require('@google/maps').createClient({
+  key: 'AIzaSyBgo7aeUai60b0KOejPs8gaedWzo7TRN4M'
+});
+
 // Creating the Main component
 var Main = React.createClass({
 
@@ -32,19 +39,72 @@ var Main = React.createClass({
 
   // If the component changes (i.e. if a search is entered)...
   componentDidUpdate: function() {
-
     // Run the query for the address
-    helpers.runQuery(this.state.searchTerm).then(function(data) {
+    // window.s = googleHelperPlaces.runQuery(this.state.searchTerm)
+    // console.log("type", typeof googleHelperPlaces.runQuery(this.state.searchTerm))
+    console.log(typeof googleMapsClient.geocode,'hfsfsd')
+    var data;
+
+    /*
+    // Geocode an address with a promise
+    googleMapsClient.geocode({address: this.state.searchTerm}).asPromise().then((response) => {
+        console.log(response.json.results);
+        data = response.json.results[0].name;
+        // console.log("results " + this.state.results);
+        console.log("be SF", data);
+        console.log("results " + this.state.results);
+        if (data !== this.state.results) {
+          console.log("Address", data);
+          this.setState({ results: data });
+
+          // After we've received the result... then post the search term to our history.
+          helpers.postHistory(this.state.searchTerm).then(function() {
+            console.log("Updated!");
+
+            // After we've done the post... then get the updated history
+            helpers.getHistory().then(function(response) {
+              console.log("Current History", response.data);
+
+              console.log("History", response.data);
+
+              this.setState({ history: response.data });
+
+            }.bind(this));
+          }.bind(this));
+        }
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      */
+
+    
+    googleMapsClient.places({
+      query: this.state.searchTerm
+      // address: '1600 Amphitheatre Parkway, Mountain View, CA'
+    }, function(err, response) {
+      if (!err) {
+        console.log("google!!!", response.json.results[0].name);
+      }
+      
+
+
+      data = response.json.results[0].name;
+      // console.log("results " + this.state.results);
+      console.log("be SF", data);
+      console.log('THIS: ', this);
+      console.log("results ", this.state.results);
       if (data !== this.state.results) {
         console.log("Address", data);
         this.setState({ results: data });
 
         // After we've received the result... then post the search term to our history.
-        helpers.postHistory(this.state.searchTerm).then(function() {
+        googleHelperPlaces.postHistory(this.state.searchTerm).then(function() {
           console.log("Updated!");
 
           // After we've done the post... then get the updated history
-          helpers.getHistory().then(function(response) {
+          googleHelperPlaces.getHistory().then(function(response) {
             console.log("Current History", response.data);
 
             console.log("History", response.data);
@@ -54,7 +114,33 @@ var Main = React.createClass({
           }.bind(this));
         }.bind(this));
       }
+
     }.bind(this));
+    
+
+    // googleMapsClient.geocode({address: '1600 Amphitheatre Parkway, Mountain View, CA'}).asPromise().then(function(data) {
+      // console.log("be SF", data);
+      // if (data !== this.state.results) {
+      //   console.log("Address", data);
+      //   this.setState({ results: data });
+
+      //   // After we've received the result... then post the search term to our history.
+      //   helpers.postHistory(this.state.searchTerm).then(function() {
+      //     console.log("Updated!");
+
+      //     // After we've done the post... then get the updated history
+      //     helpers.getHistory().then(function(response) {
+      //       console.log("Current History", response.data);
+
+      //       console.log("History", response.data);
+
+      //       this.setState({ history: response.data });
+
+      //     }.bind(this));
+      //   }.bind(this));
+      // }
+    // }.bind(this));
+
   },
   // This function allows childrens to update the parent.
   setTerm: function(term) {
