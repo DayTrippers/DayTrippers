@@ -5,7 +5,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Require History Schema
-var DayTrippers = require("./models/History");
+var DayTrippersDB = require("./models/History");
 
 // Create Instance of Express
 var app = express();
@@ -25,8 +25,9 @@ app.use(express.static("./public"));
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
 
-//I NEED HELP HERE CONNECTING TO MONGOOSE
-mongoose.connect("mongodb://admin:rachel.marie.garcia@gmail.com:Bballstar35!/");
+//I NEED HELP HERE CONNECTING 
+mongoose.connect("mongodb://localhost/DayTrippersDB");
+
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -49,7 +50,7 @@ app.get("/", function(req, res) {
 app.get("/api", function(req, res) {
 
   // We will find all the records, sort it in descending order, then limit the records to 5
-  DayTrippers.find({}).sort([
+  DayTrippersDB.find({}).sort([
     ["date", "descending"]
   ]).limit(5).exec(function(err, doc) {
     if (err) {
@@ -67,7 +68,7 @@ app.post("/api", function(req, res) {
 
   // Here we'll save the location based on the JSON input.
   // We'll use Date.now() to always get the current date time
-  DayTrippers.create({
+  DayTrippersDB.create({
     userName: req.body.userName,
     userEmail: req.body.userEmail,
     location: req.body.location,
