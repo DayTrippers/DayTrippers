@@ -38,9 +38,9 @@
 ***
 #### Contributors
 * Julie Burk [:octocat:](http://github.com/JulieBurk)
-* Rachel Garcia :octocat:
-* Pablo Ponce :octocat:
-* Juan Reyes :octocat:
+* Rachel Garcia [:octocat:](https://github.com/RachelGarcia)
+* Pablo Ponce [:octocat:](https://github.com/PabloPonce)
+* Juan Reyes [:octocat:](https://github.com/cookies4u)
 
 
 #### License
