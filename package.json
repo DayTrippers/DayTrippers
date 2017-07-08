@@ -2,7 +2,7 @@
   "name": "DayTrippers",
   "version": "1.0.0",
   "description": "Suggested interary for a day of fun and food where ever you are.  A MERN stack web app",
-  "main": "public/index.html",
+  "main": "public/index2.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack & node server",
