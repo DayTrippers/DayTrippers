@@ -1,13 +1,18 @@
-# DayTrippers
-### Day by Day your kinda way
+## DayTrippers
+ Day by Day your kinda way 
 
+***
 
-### A MERN Stack Web app which suggests interary for a day of fun and food where ever you are. 
+### Synopsis
 
+***
 
+#### A MERN Stack Web app which suggests interary for a day of fun and food where ever you are. 
 
-### Technologies Used
-	* Javacript
+***
+
+#### Technologies Used
+* Javacript
 	* HTML
 	* Bootstrap
 	* CSS
@@ -27,6 +32,13 @@
 	    * babel-preset-react
 	    * webpack
 
-===============================
+***
 
 ![Screenshot](/public/assets/DaytripperScreenshot.png)
+
+
+
+#### License
+***
+
+Copyright 2017 Berkeley Web Development Certificate Program - Julie Burk, Pablo Ponce, Rachel Garcia, Juan Reyes
