@@ -9,33 +9,41 @@
 ***
 
 #### Technologies Used
+
 * Javacript
-	* HTML
-	* Bootstrap
-	* CSS
-	* google/maps
-	* NPM Packages
-	    * axios
-	    * body-parser
-	    * express
-	    * google-places
-	    * mongoose
-	    * morgan
-	    * react
-	    * react-dom
-	    * babel-core
-	    * babel-loader
-	    * babel-preset-es2015
-	    * babel-preset-react
-	    * webpack
+* HTML
+* Bootstrap
+* CSS
+* React
+* MongoDB
+* google/maps
+* NPM Packages
+	* axios
+	* body-parser
+	* express
+	* google-places
+	* mongoose
+	* morgan
+	* react-dom
+	* babel-core
+	* babel-loader
+	* babel-preset-es2015
+	* babel-preset-react
+	* webpack
 
 ***
 
 ![Screenshot](/public/assets/DaytripperScreenshot.png)
 
+***
+#### Contributors
+*Julie Burk :octocat:
+Rachel Garcia :octocat:
+Pablo Ponce :octocat:
+Juan Reyes :octocat:
 
 
 #### License
 ***
 
-Copyright 2017 Berkeley Web Development Certificate Program - Julie Burk, Pablo Ponce, Rachel Garcia, Juan Reyes
+Copyright 2017 Berkeley Web Development Certificate Program - Julie Burk, Rachel Garcia, Pablo Ponce,  Juan Reyes
