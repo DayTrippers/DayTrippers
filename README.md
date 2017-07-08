@@ -4,10 +4,7 @@
 ***
 
 ### Synopsis
-
-***
-
-#### A MERN Stack Web app which suggests interary for a day of fun and food where ever you are. 
+ A MERN Stack Web app which suggests interary for a day of fun and food where ever you are. 
 
 ***
 
