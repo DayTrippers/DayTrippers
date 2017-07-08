@@ -37,10 +37,10 @@
 
 ***
 #### Contributors
-*Julie Burk :octocat:
-Rachel Garcia :octocat:
-Pablo Ponce :octocat:
-Juan Reyes :octocat:
+* Julie Burk [:octocat:](http://github.com/JulieBurk)
+* Rachel Garcia :octocat:
+* Pablo Ponce :octocat:
+* Juan Reyes :octocat:
 
 
 #### License
