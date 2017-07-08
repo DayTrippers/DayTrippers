@@ -2,17 +2,17 @@
 ### Day by Day your kinda way
 
 
-## A MERN Stack Web app which suggests interary for a day of fun and food where ever you are. 
+### A MERN Stack Web app which suggests interary for a day of fun and food where ever you are. 
 
 
 
-## Technologies Used
+### Technologies Used
 	* Javacript
 	* HTML
 	* Bootstrap
 	* CSS
 	* google/maps
-	*NPM Packages
+	* NPM Packages
 	    * axios
 	    * body-parser
 	    * express
@@ -29,4 +29,4 @@
 
 ===============================
 
-[Screenshot](/public/assets/DaytripperScreenshot.png)
+![Screenshot](/public/assets/DaytripperScreenshot.png)
