@@ -1,23 +1,40 @@
-// JB Notes: This page is where the data from the api's get displayed
-
 // Include React
 var React = require("react");
+// helpers api
+var helpers = require("../utils/helpers");
 
 // Creating the Results component
 var Results = React.createClass({
-  // Here we render the function
+  //article info prop from main related to returned results
+  handleSaveResult: function() {
+    event.preventDefault();
+    // helpers.postSaved(this.props.articleInfo).then(function(response) {
+    helpers.postSaved(this.props.articleInfo, function(response) { // articleInfo={res} key={i} from main
+      console.log("Response=================");
+      console.log(this.props.articleInfo);
+      this.props.removeResult(this.props.articleInfo.url) //
+    }.bind(this))
+  },
+
+  handleDeleteResult: function() {
+    event.preventDefault();
+      this.props.removeResult(this.props.articleInfo.url)
+  },
+
   render: function() {
     return (
       <div className="panel panel-default">
-        <div className="panel-heading">
-          <h3 className="panel-title text-center">Results</h3>
-        </div>
-        <div className="panel-body text-center">
-          <h1>Address:</h1>
-          <p>{this.props.address}</p>
+        <div className="panel-heading" id="resultHeader">
+          <button onClick={this.handleSaveResult} className="btn btn-default btn-xs pull-right">Save</button>
+           &nbsp; &nbsp;
+           <a target="_blank" href={this.props.articleInfo.url}>{this.props.articleInfo.title}</a>
+           &nbsp;•&nbsp; {/* {this.props.articleInfo.pub_date.substring(0,10)} */}
+      </div>
+        <div className="panel-body">
+          {/* <p>{this.props.articleInfo.snippet}</p> */}
         </div>
       </div>
-    );
+    )
   }
 });
 

@@ -1,193 +1,142 @@
 // Include React
 var React = require("react");
 
-// Here we include all of the sub-components
+// include all of the sub-components
 var Form = require("./children/Form");
 var Results = require("./children/Results");
-var History = require("./children/History");
+var SavedArticle = require("./children/SavedArticle");
 
 // Helper for making AJAX requests to our API
 var helpers = require("./utils/helpers");
 
-var googleHelperPlaces = require("./utils/APItextSearch4"); // call it on line 41 replace helpers
-// googleHelper.runQuery();
-
-var googleMapsClient = require('@google/maps').createClient({
-  key: 'AIzaSyBgo7aeUai60b0KOejPs8gaedWzo7TRN4M'
-});
-
 // Creating the Main component
 var Main = React.createClass({
 
-  // Here we set a generic state associated with the number of clicks
-  // Note how we added in this history state variable
+  // initial states set user inputs and returned results
   getInitialState: function() {
-    return { searchTerm: "", results: "", history: [] };
+    // return { searchTerm: "", searchBegindate:"", searchEnddate:"", results: [], savedArticls: [] };
+    return { searchTerm: "", results: [], savedArticls: [] };
   },
 
-  // The moment the page renders get the History
-  componentDidMount: function() {
-    // Get the latest history.
-    helpers.getHistory().then(function(response) {
-      console.log(response);
-      if (response !== this.state.history) {
-        console.log("History", response.data);
-        this.setState({ history: response.data });
+  // may resole save issue
+  // The moment the page renders get saved articles 
+  getSavedArticles() {
+    // Get the latest saved.
+    helpers.getSaved().then(function(response) { // this is all thats needed to get saved and 
+    // helpers.getSaved(function(response) {
+      console.log("These are current saved articles ", response);
+      if (response !== this.state.savedArticls) {
+        console.log("Saved articles", response.data);
+        this.setState({ savedArticls: response.data });
       }
     }.bind(this));
   },
 
-  // If the component changes (i.e. if a search is entered)...
+  handleDeleteSavedArticle: function(article) {
+      // helpers.deleteSaved(article._id).then(function(data) {
+      helpers.deleteSaved(article._id, function(data) {
+        this.getSavedArticles();
+      }.bind(this));
+  },
+
+  // If the component changes (i.e. if a search is entered)
   componentDidUpdate: function() {
-    // Run the query for the address
-    // window.s = googleHelperPlaces.runQuery(this.state.searchTerm)
-    // console.log("type", typeof googleHelperPlaces.runQuery(this.state.searchTerm))
-    console.log(typeof googleMapsClient.geocode,'hfsfsd')
-    var data;
 
-    /*
-    // Geocode an address with a promise
-    googleMapsClient.geocode({address: this.state.searchTerm}).asPromise().then((response) => {
-        console.log(response.json.results);
-        data = response.json.results[0].name;
-        // console.log("results " + this.state.results);
-        console.log("be SF", data);
-        console.log("results " + this.state.results);
-        if (data !== this.state.results) {
-          console.log("Address", data);
-          this.setState({ results: data });
-
-          // After we've received the result... then post the search term to our history.
-          helpers.postHistory(this.state.searchTerm).then(function() {
-            console.log("Updated!");
-
-            // After we've done the post... then get the updated history
-            helpers.getHistory().then(function(response) {
-              console.log("Current History", response.data);
-
-              console.log("History", response.data);
-
-              this.setState({ history: response.data });
-
-            }.bind(this));
-          }.bind(this));
-        }
-
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      */
-
+   if (this.state.searchTerm !== "") {
+      console.log("im in componentDidUpdate if statement");
+      var obj = {      
+        term: this.state.searchTerm,
+        // begin_date: this.state.searchBegindate,
+        // end_date: this.state.searchEnddate
+      };
+    console.log("im in componentDidUpdate after if statement");
+    console.log(obj);
     
-    googleMapsClient.places({
-      query: this.state.searchTerm
-      // address: '1600 Amphitheatre Parkway, Mountain View, CA'
-    }, function(err, response) {
-      if (!err) {
-        console.log("google!!!", response.json.results[0].name);
-      }
-      
-
-
-      data = response.json.results[0].name;
-      // console.log("results " + this.state.results);
-      console.log("be SF", data);
-      console.log('THIS: ', this);
-      console.log("results ", this.state.results);
+    // Run the query for the search criteria
+    helpers.runQuery(obj, function(data) {
       if (data !== this.state.results) {
         console.log("Address", data);
         this.setState({ results: data });
-
-        // After we've received the result... then post the search term to our history.
-        googleHelperPlaces.postHistory(this.state.searchTerm).then(function() {
-          console.log("Updated!");
-
-          // After we've done the post... then get the updated history
-          googleHelperPlaces.getHistory().then(function(response) {
-            console.log("Current History", response.data);
-
-            console.log("History", response.data);
-
-            this.setState({ history: response.data });
-
-          }.bind(this));
-        }.bind(this));
-      }
-
+      } 
     }.bind(this));
     
 
-    // googleMapsClient.geocode({address: '1600 Amphitheatre Parkway, Mountain View, CA'}).asPromise().then(function(data) {
-      // console.log("be SF", data);
-      // if (data !== this.state.results) {
-      //   console.log("Address", data);
-      //   this.setState({ results: data });
+    this.setState({searchTerm: ""});
+    
 
-      //   // After we've received the result... then post the search term to our history.
-      //   helpers.postHistory(this.state.searchTerm).then(function() {
-      //     console.log("Updated!");
+   } 
+  },
 
-      //     // After we've done the post... then get the updated history
-      //     helpers.getHistory().then(function(response) {
-      //       console.log("Current History", response.data);
-
-      //       console.log("History", response.data);
-
-      //       this.setState({ history: response.data });
-
-      //     }.bind(this));
-      //   }.bind(this));
-      // }
-    // }.bind(this));
-
+  removeResult: function(url) {
+    let indexToRemove = -1
+    for (let i = 0; i < this.state.results.length; i++) {
+      if (this.state.results[i].url === url) {
+        indexToRemove = i
+      }
+    }
+    this.state.results.splice(indexToRemove, 1)
+    this.setState({ results: this.state.results})
+    this.getSavedArticles();
   },
   // This function allows childrens to update the parent.
+  // setTerm: function(term, begin_date, end_date) {
   setTerm: function(term) {
+    console.log(term);
     this.setState({ searchTerm: term });
+
+    // console.log(begin_date);
+    // this.setState({ searchBegindate: begin_date });
+
+    // console.log(end_date);
+    // this.setState({ searchEnddate: end_date });
   },
-  // Here we render the function
+
+  // render the function
   render: function() {
     return (
       <div className="container">
         <div className="row">
           <div className="jumbotron">
+            <h2 className="text-center"><strong><i className="fa fa-newspaper-o"></i> New York Times Search</strong></h2>
+          </div>
+        </div>
+
+        <div className="row">
+          <Form setTerm={this.setTerm} />
+        </div>
+
+        <div className="row">
+            <h5><strong>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              {this.state.results.length ? "Search Results" : "" }
+            </strong></h5>   
+        </div>
+        
+        <div className="row">
+          {this.state.results.map(function(res, i) {
+                return (
+                  <Results removeResult={this.removeResult} articleInfo={res} key={i} />
+                );
+          }.bind(this))}
+        </div>
 
 
-
-             
-                  <div className="header-content">
-                      <div className="inner">
-                          <img src="./public/assets/logoWhite2.png" id="logoWhite"/>
-                          <h4>Day by Day your Kinda Way</h4>  
-                      </div>
+        <div className="row">
+          <div className="panel panel-default">
+            <div className="panel-heading" id="savedHeader"><strong>Saved Article(s)</strong></div>
+              <div className="panel-body">
+              {this.state.savedArticls.map(function(res2, i) {
+                return (
+                  <div className="panel panel-default">
+                    <div className="panel-body">
+                      <SavedArticle handleDeleteSavedArticle={this.handleDeleteSavedArticle} savedArticleInfo={res2}  key={i + "b"}/>
+                    </div>
                   </div>
-                      <img src="./publc/assets/background.jpg" id="video-background"/>
-    
-
-            <h2 className="text-center">TEST AGAIN</h2>
-
-            <p className="text-center">
-              <em>Lets add this API.</em>
-            </p>
+                );
+              }.bind(this))}
+              </div>
+            </div>
           </div>
-
-          <div className="col-md-12">
-
-            <Form setTerm={this.setTerm} />
-
-          </div>
-
-          <div className="col-md-12">
-
-            <Results address={this.state.results} />
-          </div>
-
-        </div>
-
-        // <div className="row">
-        //   <History history={this.state.history}/>
-        </div>
 
       </div>
     );
