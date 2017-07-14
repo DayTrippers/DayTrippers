@@ -12,6 +12,8 @@ var helpers = require("./utils/helpers");
 // Creating the Main component
 var Main = React.createClass({
 
+
+
   // initial states set user inputs and returned results
   getInitialState: function() {
     // return { searchTerm: "", searchBegindate:"", searchEnddate:"", results: [], savedArticls: [] };
@@ -125,6 +127,18 @@ var Main = React.createClass({
           <div className="panel panel-default">
             <div className="panel-heading" id="savedHeader"><strong>Saved Article(s)</strong></div>
               <div className="panel-body">
+
+
+                      <div className="col-xs-4 col-sm-4 column">
+                         <h4>About</h4>
+                            <ul className="list-unstyled">
+                              <li><a href="#">Contact Us</a></li>
+                              <li><a href="#">Privacy Policy</a></li>
+                              <li><a href="#">Terms &amp; Conditions</a></li>
+                           </ul>
+                       </div>
+
+
               {this.state.savedArticls.map(function(res2, i) {
                 return (
                   <div className="panel panel-default">
