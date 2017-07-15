@@ -20,9 +20,11 @@ var SavedArticle = React.createClass({
   render: function() {
     return (  
       <div>
-        <a target="_blank" href={this.props.savedArticleInfo.url}>{this.props.savedArticleInfo.title}</a>
-        &nbsp;•&nbsp; {/* Saved Date {this.props.savedArticleInfo.date.substring(0,10)} */}
         <button onClick={this.handleDelete} className="btn btn-default btn-xs pull-right">Delete</button>
+        { /* <a target="_blank" href={this.props.savedArticleInfo.url}>{this.props.savedArticleInfo.title}</a> */ }
+        <h1>{this.props.savedArticleInfo.title}</h1>
+        <img src={this.props.savedArticleInfo.url}></img>
+        &nbsp;•&nbsp; {/* Saved Date {this.props.savedArticleInfo.date.substring(0,10)} */}
       </div>
     );
   }

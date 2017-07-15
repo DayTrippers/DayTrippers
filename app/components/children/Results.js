@@ -27,7 +27,9 @@ var Results = React.createClass({
         <div className="panel-heading" id="resultHeader">
           <button onClick={this.handleSaveResult} className="btn btn-default btn-xs pull-right">Save</button>
            &nbsp; &nbsp;
-           <a target="_blank" href={this.props.articleInfo.url}>{this.props.articleInfo.title}</a>
+           {/* <a target="_blank" href={this.props.articleInfo.url}>{this.props.articleInfo.title}</a> */}
+           <h1>{this.props.articleInfo.title}</h1>
+           <img src={this.props.articleInfo.url}></img>
            &nbsp;•&nbsp; {/* {this.props.articleInfo.pub_date.substring(0,10)} */}
       </div>
         <div className="panel-body">
