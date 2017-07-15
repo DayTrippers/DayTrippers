@@ -51,9 +51,7 @@ var Form = React.createClass({
   render: function() {
     return (
       <div className="panel panel-default">
-        <div className="panel-heading" id="formHeader">
-          <h3 className="panel-title"><strong><i className="fa  fa-list-alt"></i> Search Parameters</strong></h3>
-        </div>
+      
         <div className="panel-body">
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
