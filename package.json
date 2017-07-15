@@ -1,25 +1,29 @@
 {
-  "name": "nyt_react-search",
+  "name": "DayTrippers",
   "version": "1.0.0",
   "description": "MERN stack using nytimes api for search",
-  "main": "server.js",
+  "main": "server2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cookies4u/NYT_ReactSearch.git"
+    "url": "git+https://github.com/DayTrippers/DayTrippers"
   },
   "keywords": [
     "MERN",
     "stack"
+    "travel"
+    "react"
+    "javascript"
+    "css"
   ],
-  "author": "Juan C.",
+  "author": "Julie Burk, Rachel Garcia, Pablo Ponce, Juan Reyes.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cookies4u/NYT_ReactSearch/issues"
+    "url": "https://github.com/DayTrippers/DayTrippers/issues"
   },
-  "homepage": "https://github.com/cookies4u/NYT_ReactSearch#readme",
+  "homepage": "https://github.com/DayTrippers/DayTrippers",
   "dependencies": {
     "@google/maps": "^0.4.2",
     "axios": "^0.16.2",
@@ -37,6 +41,9 @@
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "chai": "*",
+    "mocha": "*",
+    "nightmare": "*",
     "webpack": "^1.13.1"
   }
 }
