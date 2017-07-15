@@ -1,8 +1,9 @@
 {
   "name": "DayTrippers",
   "version": "1.0.0",
-  "description": "MERN stack using nytimes api for search",
-  "main": "server2.js",
+  "description": "MERN stack web app which suggests interary for a day of fun and food where ever you are. 
+",
+  "main": "public/index2.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,10 +13,10 @@
   },
   "keywords": [
     "MERN",
-    "stack"
-    "travel"
-    "react"
-    "javascript"
+    "stack",
+    "travel",
+    "react",
+    "javascript",
     "css"
   ],
   "author": "Julie Burk, Rachel Garcia, Pablo Ponce, Juan Reyes.",

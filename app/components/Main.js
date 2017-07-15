@@ -97,7 +97,7 @@ var Main = React.createClass({
       <div className="container">
         <div className="row">
           <div className="jumbotron">
-            <h2 className="text-center"><strong><i className="fa fa-newspaper-o"></i> New York Times Search</strong></h2>
+            <h2 className="text-center"><strong><i className="fa fa-newspaper-o"></i> # </strong></h2>
           </div>
         </div>
 
