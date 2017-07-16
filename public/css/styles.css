@@ -599,8 +599,8 @@ img::-moz-selection {
 
 body {
     font-family: 'Questrial','Helvetica Neue',Arial,sans-serif;
-    background-color: #black;
-    color: #a94442;
+    background-color: black;
+    color: #662f10;
     webkit-tap-highlight-color: #000000;
 }
 
@@ -664,10 +664,14 @@ background-color: #091418;
 
 .panel {
     margin-bottom: 20px;
-    background-color: #5b5d50;
+    background-color: transparent;
     opacity: 50%;
     border: 1px solid rgba(173, 47, 47, 0);
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel-body {
+    background-color: transparent;
 }
