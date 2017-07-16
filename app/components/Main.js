@@ -94,8 +94,10 @@ var Main = React.createClass({
   // render the function
   render: function() {
     return (
+    <div className="containermain">
       <div className="container">
         <div className="row">
+          
         </div>
 
         <div className="row">
@@ -136,6 +138,7 @@ var Main = React.createClass({
           </div>
 
       </div>
+    </div> //end container main
     );
   }
 });
