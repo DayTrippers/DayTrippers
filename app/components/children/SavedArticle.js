@@ -25,7 +25,19 @@ var SavedArticle = React.createClass({
         <h1>{this.props.savedArticleInfo.title}</h1>
         <img src={this.props.savedArticleInfo.url}></img>
         &nbsp;•&nbsp; {/* Saved Date {this.props.savedArticleInfo.date.substring(0,10)} */}
+
+
+
+         <div>
+          <form action="https://formspree.io/rachel.marie.garcia@gmail.com" method="POST"> 
+              <input type="email" name="email" placeholder="Your email"></input>
+              <input type="submit" class="btn btn-xl" value="Send Itinerary"></input>
+          </form>
+         </div>
+
+
       </div>
+
     );
   }
 });
