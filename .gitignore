@@ -36,7 +36,10 @@
 ehthumbs.db
 Thumbs.db
 
+/node_modules
+node_modules/
 node_modules
 
 public/bundle.js
+/public/bundle.js
 

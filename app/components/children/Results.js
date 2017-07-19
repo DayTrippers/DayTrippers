@@ -23,13 +23,13 @@ var Results = React.createClass({
 
   render: function() {
     return (
-      <div className="panel panel-default">
-        <div className="panel-heading" id="resultHeader">
+      <div className="container-fluid" classID="gallery-box"> {/*WE NEED TO CHANGE THE CSS HERE*/}
+        <div className="panel-heading" classID="resultHeader ">
           <button onClick={this.handleSaveResult} className="btn btn-default btn-xs pull-right">Save</button>
            &nbsp; &nbsp;
            {/* <a target="_blank" href={this.props.articleInfo.url}>{this.props.articleInfo.title}</a> */}
-           <h1>{this.props.articleInfo.title}</h1>
-           <img src={this.props.articleInfo.url}></img>
+            <img src={this.props.articleInfo.url}></img>
+            <h1>{this.props.articleInfo.title}</h1>
            &nbsp;•&nbsp; {/* {this.props.articleInfo.pub_date.substring(0,10)} */}
       </div>
         <div className="panel-body">

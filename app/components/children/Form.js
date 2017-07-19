@@ -50,15 +50,17 @@ var Form = React.createClass({
   // Here we describe this component's render method. this component is only for the form. The results are a different component after user hits submit
   render: function() {
     return (
+
       <div className="panel panel-default">
-        <div className="panel-heading" id="formHeader">
-          <h3 className="panel-title"><strong><i className="fa  fa-list-alt"></i> Search Parameters</strong></h3>
+        <div className="panel-heading col-lg-4 col-sm-6" id="formHeader">
+          <h3 className="panel-title"><strong><i className="fa  fa-list-alt"></i></strong></h3>
         </div>
+
         <div className="panel-body">
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <h4 className="">
-                Search Term:
+                
               </h4>
 
               {/*
