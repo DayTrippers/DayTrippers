@@ -24,7 +24,7 @@ var SavedArticle = React.createClass({
         { /* <a target="_blank" href={this.props.savedArticleInfo.url}>{this.props.savedArticleInfo.title}</a> */ }
         <h1>{this.props.savedArticleInfo.title}</h1>
         <img src={this.props.savedArticleInfo.url}></img>
-        &nbsp;•&nbsp; {/* Saved Date {this.props.savedArticleInfo.date.substring(0,10)} */}
+        &nbsp;•&nbsp;
       </div>
     );
   }
