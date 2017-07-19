@@ -12,27 +12,7 @@ var ArticleSchema = new Schema({
     type: Date,
     default: Date.now
   }
-/*
-  title: {
-    type: String
-  },
-  snippet: {
-    type: String
-  },
-  url: {
-    type: String
-  },
-  pub_date: {
-    type: Date
-  },
-  date: {
-    type: Date,
-    default: Date.now
-  },
-  art_id: {
-    type: String
-  }
-  */
+
 });
 
 var Article = mongoose.model("Article", ArticleSchema);
