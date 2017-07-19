@@ -94,13 +94,10 @@ var Main = React.createClass({
   // render the function
   render: function() {
     return (
-    <div className="containermain">
+    <div className="container main">
       <div className="container">
         <div className="row">
-<<<<<<< HEAD
-          
-=======
->>>>>>> master
+
         </div>
 
         <div className="row">

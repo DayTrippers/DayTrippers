@@ -23,8 +23,8 @@ var Results = React.createClass({
 
   render: function() {
     return (
-      <div className="container-fluid" classID="gallery-box"> {/*WE NEED TO CHANGE THE CSS HERE*/}
-        <div className="panel-heading" classID="resultHeader ">
+      <div className="gallery-box"> {/*WE NEED TO CHANGE THE CSS HERE*/}
+        <div className="panel-heading resultHeader ">
           <button onClick={this.handleSaveResult} className="btn btn-default btn-xs pull-right">Save</button>
            &nbsp; &nbsp;
            {/* <a target="_blank" href={this.props.articleInfo.url}>{this.props.articleInfo.title}</a> */}
