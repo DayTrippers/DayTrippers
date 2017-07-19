@@ -94,8 +94,13 @@ var Main = React.createClass({
   // render the function
   render: function() {
     return (
+    <div className="containermain">
       <div className="container">
         <div className="row">
+<<<<<<< HEAD
+          
+=======
+>>>>>>> master
         </div>
 
         <div className="row">
@@ -105,7 +110,7 @@ var Main = React.createClass({
         <div className="row">
             <h5><strong>
               &nbsp;&nbsp;&nbsp;&nbsp;
-              {this.state.results.length ? "Search Results" : "" }
+              {this.state.results.length ? "Lets Start" : "" }
             </strong></h5>   
         </div>
         
@@ -120,7 +125,7 @@ var Main = React.createClass({
 
         <div className="row">
           <div className="panel panel-default">
-            <div className="panel-heading" id="savedHeader"><strong>Saved Article(s)</strong></div>
+            <div className="panel-heading" id="savedHeader"><strong> Saved Day Trip</strong></div>
               <div className="panel-body">
               {this.state.savedArticls.map(function(res2, i) {
                 return (
@@ -136,6 +141,7 @@ var Main = React.createClass({
           </div>
 
       </div>
+    </div> //end container main
     );
   }
 });
