@@ -29,19 +29,6 @@ app.get("/api", function(req, res) {
       res.send(doc);
     }
   });
-  /*
-  Article.find({}).sort([
-    ["date", "descending"]
-  ]).limit(5).exec(function(err, doc) {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      res.send(doc);
-    }
-  });
-  */
-
 });
 
 // the route will send POST requests to save each search.
@@ -54,14 +41,6 @@ app.post("/api", function(req, res) {
     title: req.body.title,
     url: req.body.url,
     date: Date.now()
-    /*
-    title: req.body.title,
-    snippet: req.body.snippet,
-    url: req.body.url,
-    pub_date: req.body.date,
-    art_id: req.body.art_id,
-    date: Date.now()
-    */
   }, function(err) {
     if (err) {
       console.log(err);

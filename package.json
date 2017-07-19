@@ -1,8 +1,7 @@
 {
   "name": "DayTrippers",
   "version": "1.0.0",
-  "description": "MERN stack web app which suggests interary for a day of fun and food where ever you are. 
-",
+  "description": "MERN stack web app which suggests interary for a day of fun and food where ever you are.",
   "main": "public/index2.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
