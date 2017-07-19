@@ -97,7 +97,10 @@ var Main = React.createClass({
     <div className="containermain">
       <div className="container">
         <div className="row">
+<<<<<<< HEAD
           
+=======
+>>>>>>> master
         </div>
 
         <div className="row">

@@ -55,6 +55,7 @@ var Form = React.createClass({
         <div className="panel-heading col-lg-4 col-sm-6" id="formHeader">
           <h3 className="panel-title"><strong><i className="fa  fa-list-alt"></i></strong></h3>
         </div>
+
         <div className="panel-body">
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
