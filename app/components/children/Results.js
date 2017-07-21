@@ -30,7 +30,7 @@ var Results = React.createClass({
            {/* <a target="_blank" href={this.props.articleInfo.url}>{this.props.articleInfo.title}</a> */}
             <img src={this.props.articleInfo.url}></img>
             <h1>{this.props.articleInfo.title}</h1>
-           &nbsp;•&nbsp; {/* {this.props.articleInfo.pub_date.substring(0,10)} */}
+           &nbsp; &nbsp; {/* {this.props.articleInfo.pub_date.substring(0,10)} */}
       </div>
         <div className="panel-body">
           {/* <p>{this.props.articleInfo.snippet}</p> */}
