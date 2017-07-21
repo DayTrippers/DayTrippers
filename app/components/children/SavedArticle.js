@@ -24,7 +24,17 @@ var SavedArticle = React.createClass({
         { /* <a target="_blank" href={this.props.savedArticleInfo.url}>{this.props.savedArticleInfo.title}</a> */ }
         <h1>{this.props.savedArticleInfo.title}</h1>
         <img src={this.props.savedArticleInfo.url}></img>
-        &nbsp;•&nbsp;
+        &nbsp; &nbsp;
+{/* Email Plugin is here*/}
+         <div>
+          <form className="email" action="https://formspree.io/rachel.marie.garcia@gmail.com" method="POST"> 
+              <input className="email" type="email" name="email" placeholder="Your email"></input>
+              <input type="submit" class="btn btn-xl" value="Send"></input>
+          </form>
+         </div>
+
+
+
       </div>
     );
   }
